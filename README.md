@@ -27,6 +27,6 @@
 <p align="center">Структура сети U-NET</p>
 <p align="justify"><a href = "https://arxiv.org/pdf/1611.09326.pdf">Модель Тирамису</a> похожа на U-Net за исключением того, что для прямой и транспонированной свертки здесь используются плотные блоки, как показано в работе <a href = "https://arxiv.org/pdf/1608.06993.pdf">DenseNet </a>. Плотные блоки состоят из нескольких сверточных слоев, где в качестве входов на последующие слои используются отображения признаков со всех предыдущих слоев. Результирующая сеть чрезвычайно эффективна в смысле параметров и может лучше работать с признаками из старых слоев.
 <p align="center">
-<img src="https://cdn-images-1.medium.com/max/1200/1*yX-Sgvyfn7izUKZjFO3BHA.png" width="480" height="240">
+<img src="https://cdn-images-1.medium.com/max/1200/1*yX-Sgvyfn7izUKZjFO3BHA.png" width="480" height="480">
 </p>
 <p align="center">Структура сети Тирамису</p>
