@@ -19,5 +19,5 @@
 <p align="center">
 <img src="https://cdn-images-1.medium.com/max/1200/1*edkNzGBBDBXtpZMq-pnSng.png" width="480" height="240">
 </p>
-<h1 align="center">Структура FCN</h1>
+<p align="center">Структура FCN</p>
 
