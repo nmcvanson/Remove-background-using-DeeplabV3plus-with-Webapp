@@ -161,4 +161,6 @@ def ASPP(inputs):
   ```ruby
   uvicorn app:app --host 127.0.0.1 --port 8000
    ```
-  
+ <p align="center">
+  <img src = "./demo.gif">
+</p>
