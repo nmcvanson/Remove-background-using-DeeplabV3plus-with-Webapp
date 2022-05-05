@@ -28,4 +28,4 @@
 
 ## Данные
 <p align="justify">Для задачи сегментации человеческого изображения нам нужен набор данных с человеческими изображениями и с правильно аннотированными масками. Здесь я собираюсь использовать набор данных "Person Segmentation" (https://www.kaggle.com/nikhilroxtomar/person-segmation>). Набор данных состоит из 5678 изображений и масок.</p>
-![alt text](https://github.com/[nmvvanson]/[Remove-background-using-DeeplabV3-with-Webapp]/blob/[branch]/Пример_изображения_с_маском.jpg?raw=true)
+<img src = "./Dataset/Пример_изображения_с_маском.jpg" width = 480 height = 240>
