@@ -56,33 +56,33 @@
 <p align="justify">Весь код для построения нейронных сетей в файле <b>model.py</b>. Сеть начинается с предварительно обученного ResNet50 в качестве кодера, за которым следует Atrous Spatial Pyramid Pooling (ASPP). ASPP состоит из расширенной свертки, которая помогает кодировать многомасштабную контекстную информацию. Затем за ней следует билинейный апсамплинг (bilinear upsampling) в 4 раза, а затем соединяется с низкоуровневой информацией из энкодера. После этого применяется несколько 3×3 свертки и снова следует билинейная апсамплинг в 4 раза. Наконец-то мы получаем выходную маску.
 </p>
 ```
-def ASPP(inputs):
+def ASPP(inputs):  
 <!--      Image Pooling """ -->
-  shape = inputs.shape
-  y1 = AveragePooling2D(pool_size=(shape[1], shape[2]))(inputs)
-  y1 = Conv2D(256, 1, padding="same", use_bias=False)(y1)
-  y1 = BatchNormalization()(y1)
-  y1 = Activation("relu")(y1)
-  y1 = UpSampling2D((shape[1], shape[2]), interpolation="bilinear")(y1)
-<!--      1x1 conv  -->
-  y2 = Conv2D(256, 1, padding="same", use_bias=False)(inputs)
-  y2 = BatchNormalization()(y2)
-  y2 = Activation("relu")(y2)
-  <!--     """ 3x3 conv rate=6 """ -->
-  y3 = Conv2D(256, 3, padding="same", use_bias=False, dilation_rate=6)(inputs)
-  y3 = BatchNormalization()(y3)
-  y3 = Activation("relu")(y3)
-  <!--     """ 3x3 conv rate=12 """ -->
-  y4 = Conv2D(256, 3, padding="same", use_bias=False, dilation_rate=12)(inputs)
-  y4 = BatchNormalization()(y4)
-  y4 = Activation("relu")(y4)
-  <!--     """ 3x3 conv rate=18 """ -->
-  y5 = Conv2D(256, 3, padding="same", use_bias=False, dilation_rate=18)(inputs)
-  y5 = BatchNormalization()(y5)
-  y5 = Activation("relu")(y5)
-  y = Concatenate()([y1, y2, y3, y4, y5])
-  y = Conv2D(256, 1, padding="same", use_bias=False)(y)
-  y = BatchNormalization()(y)
-  y = Activation("relu")(y)
-  return y
+  shape = inputs.shape  
+  y1 = AveragePooling2D(pool_size=(shape[1], shape[2]))(inputs)  
+  y1 = Conv2D(256, 1, padding="same", use_bias=False)(y1)  
+  y1 = BatchNormalization()(y1)  
+  y1 = Activation("relu")(y1)  
+  y1 = UpSampling2D((shape[1], shape[2]), interpolation="bilinear")(y1)  
+<!--      1x1 conv  -->  
+  y2 = Conv2D(256, 1, padding="same", use_bias=False)(inputs)  
+  y2 = BatchNormalization()(y2)  
+  y2 = Activation("relu")(y2)  
+  <!--     """ 3x3 conv rate=6 """ -->  
+  y3 = Conv2D(256, 3, padding="same", use_bias=False, dilation_rate=6)(inputs)  
+  y3 = BatchNormalization()(y3)  
+  y3 = Activation("relu")(y3)  
+  <!--     """ 3x3 conv rate=12 """ -->  
+  y4 = Conv2D(256, 3, padding="same", use_bias=False, dilation_rate=12)(inputs)  
+  y4 = BatchNormalization()(y4)  
+  y4 = Activation("relu")(y4)  
+  <!--     """ 3x3 conv rate=18 """ -->  
+  y5 = Conv2D(256, 3, padding="same", use_bias=False, dilation_rate=18)(inputs)  
+  y5 = BatchNormalization()(y5)  
+  y5 = Activation("relu")(y5)  
+  y = Concatenate()([y1, y2, y3, y4, y5])  
+  y = Conv2D(256, 1, padding="same", use_bias=False)(y)  
+  y = BatchNormalization()(y)  
+  y = Activation("relu")(y)  
+  return y  
 ```
