@@ -47,8 +47,8 @@
   <li>Albumentations.HorizontalFlip(p=1) - горизонтальный флип;</li>
   <li>сv2.cvtColor(x, cv2.COLOR_RGB2GRAY) - преобразование цветных изображений RGB в изображения в оттенках серого;</li>
   <li>Albumentations.ChannelShuffle(p=1) - случайным образом переупорядочить каналы входного RGB-изображения;</li>
-  <li>Albumentations.Blur(blur_limit=7, p=1) - размытие входного изображений </li>;
-  <li>Albumentations.Rotate(limit=45, p=1.0) - вращение изображений и масок на 45 градусов </li>.
+  <li>Albumentations.Blur(blur_limit=7, p=1) - размытие входного изображений;</li>
+  <li>Albumentations.Rotate(limit=45, p=1.0) - вращение изображений и масок на 45 градусов .</li>
 </ul>
 </p>
  
