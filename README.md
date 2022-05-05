@@ -89,7 +89,7 @@ def ASPP(inputs):
   return y
 ```
 
-```
+```ruby
 def deeplabv3_plus(shape):
     """ Input """
     inputs = Input(shape)
