@@ -90,7 +90,7 @@ def ASPP(inputs):
 ```
 
 ```ruby
- def deeplabv3_plus(shape):
+ def deeplabv3_plus(shape):  
   """ Input """
   inputs = Input(shape)  
 
