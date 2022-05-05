@@ -93,31 +93,31 @@ def ASPP(inputs):
 def deeplabv3_plus(shape):
   """ Input """
   inputs = Input(shape)
-
+  
   """ Encoder """
   encoder = ResNet50(weights="imagenet", include_top=False, input_tensor=inputs)
-
+  
   image_features = encoder.get_layer("conv4_block6_out").output
   x_a = ASPP(image_features)
   x_a = UpSampling2D((4, 4), interpolation="bilinear")(x_a)
-
+  
   x_b = encoder.get_layer("conv2_block2_out").output
   x_b = Conv2D(filters=48, kernel_size=1, padding='same', use_bias=False)(x_b)
   x_b = BatchNormalization()(x_b)
   x_b = Activation('relu')(x_b)
-
+  
   x = Concatenate()([x_a, x_b])
   x = SqueezeAndExcite(x)
-
+  
   x = Conv2D(filters=256, kernel_size=3, padding='same', use_bias=False)(x)
   x = BatchNormalization()(x)
   x = Activation('relu')(x)
-
+  
   x = Conv2D(filters=256, kernel_size=3, padding='same', use_bias=False)(x)
   x = BatchNormalization()(x)
   x = Activation('relu')(x)
   x = SqueezeAndExcite(x)
-
+  
   x = UpSampling2D((4, 4), interpolation="bilinear")(x)
   x = Conv2D(1, 1)(x)
   x = Activation("sigmoid")(x)
