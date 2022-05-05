@@ -31,11 +31,11 @@
 <p align="center">
 <img src = "./Dataset/Пример_изображения_с_маском.jpg" width = 480 height = 240>  
 <br>Пример изображения с маском из датасета </p>
-<p align="center">
+<p align="justify">
 Датасет состоит из трех павки:  
 <ul>
   <li> images - содерживает изображения </li>
   <li> masks - содерживает маски </li>
-  <li> segmentation - содерживает 3 файла .txt</li>
+  <li> segmentation - содерживает 3 файла .txt с названиями изображений и масок</li>
 </ul>
-Структура сети DeepLav3v+</p>
+</p>
