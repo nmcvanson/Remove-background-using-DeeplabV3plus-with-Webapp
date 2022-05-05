@@ -163,4 +163,5 @@ def ASPP(inputs):
    ```
  <p align="center">
   <img src = "./demo.gif">
+  <br>demo веб для удаления фона</p>
 </p>
