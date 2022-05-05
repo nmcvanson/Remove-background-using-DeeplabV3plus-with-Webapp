@@ -129,4 +129,14 @@ def ASPP(inputs):
   ```
   ## Обучение модели
   
-  
+  <p align="justify"> Исользовать Google Colaboratory для тренировки нейросетей, т.к у меня нет компьютера с мощным процессором. Код написан файле <b>train.ipynb</b>.  Google Colaboratory дает возможность бесплатно и непрерывно пользоваться ими на протяжении 12 часов, поэтому надо сохранить модель или ее весов в процессе обучения с помощью функции обратного вызова ModelCheckpoint.</p>
+ 
+ ```ruby
+  callbacks = [
+    ModelCheckpoint(model_path, verbose=1, save_best_only=True),
+    ReduceLROnPlateau(monitor='val_loss', factor=0.1, patience=5, min_lr=1e-7, verbose=1),
+    CSVLogger(csv_path),
+    TensorBoard(),
+    EarlyStopping(monitor='val_loss', patience=20, restore_best_weights=False),
+]
+  ```
