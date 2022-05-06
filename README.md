@@ -205,6 +205,6 @@ def ASPP(inputs):
 
 Нгуен Мань Кыонг  
 Магистрант ФБИТ, университет ИТМО  
-manhcuonmta1997@gmail.com  
+augusttttt97@gmail.com  
 nmc.vanson.pt@gmail.com  
-+79680426879
+Telegram: @nm_cuong
