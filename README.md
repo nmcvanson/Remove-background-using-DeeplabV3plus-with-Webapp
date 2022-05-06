@@ -141,7 +141,7 @@ def ASPP(inputs):
   num_epochs = 20
   
   """ Загрузка датасета """
-  from train import shuffling, load_data, read_image, read_mask, tf_parse, tf_dataset
+  from util import shuffling, load_data, read_image, read_mask, tf_parse, tf_dataset
   train_path = os.path.join('/content/removal_bg/dataset/new_data', "train")
   valid_path = os.path.join('/content/removal_bg/dataset/new_data', "test")
   train_x, train_y = load_data(train_path)
