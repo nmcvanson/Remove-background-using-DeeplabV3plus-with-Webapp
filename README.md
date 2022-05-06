@@ -200,3 +200,11 @@ def ASPP(inputs):
   <img src = "./demo.gif">
   <br>Demo веб-удаления фона</p>
 </p>
+
+# Автор
+
+Нгуен Мань Кыонг
+Магистрант ФБИТ, уневерситет ИТМО
+manhcuonmta1997@gmail.com
+nmc.vanson.pt@gmail.com
++79680426879
