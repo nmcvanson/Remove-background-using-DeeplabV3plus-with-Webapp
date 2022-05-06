@@ -134,6 +134,27 @@ def ASPP(inputs):
   <p align="justify"> Использовать Google Colaboratory для тренировки нейросетей, т.к у меня нет компьютера с мощным процессором. Код написан файле <b>train.ipynb</b>.  Google Colaboratory дает возможность бесплатно и непрерывно пользоваться ими на протяжении 12 часов, поэтому надо сохранить модель или ее весов в процессе обучения с помощью функции обратного вызова ModelCheckpoint.</p>
  
  ```ruby
+ 
+  """ Гиперпараметры """
+  batch_size = 2
+  lr = 1e-4
+  num_epochs = 20
+  
+  """ Загрузка датасета """
+  from train import shuffling, load_data, read_image, read_mask, tf_parse, tf_dataset
+  train_path = os.path.join('/content/removal_bg/dataset/new_data', "train")
+  valid_path = os.path.join('/content/removal_bg/dataset/new_data', "test")
+  train_x, train_y = load_data(train_path)
+  train_x, train_y = shuffling(train_x, train_y)
+  valid_x, valid_y = load_data(valid_path)
+  train_dataset = tf_dataset(train_x, train_y, batch=batch_size)
+  valid_dataset = tf_dataset(valid_x, valid_y, batch=batch_size
+  
+  """ Модель """
+  H = 512
+  W = 512
+  model = deeplabv3_plus((H, W, 3))
+  model.compile(loss=dice_loss, optimizer=Adam(lr), metrics=[dice_coef, iou, Recall(), Precision()])
   callbacks = [
     ModelCheckpoint(model_path, verbose=1, save_best_only=True),
     ReduceLROnPlateau(monitor='val_loss', factor=0.1, patience=5, min_lr=1e-7, verbose=1),
@@ -141,6 +162,12 @@ def ASPP(inputs):
     TensorBoard(),
     EarlyStopping(monitor='val_loss', patience=20, restore_best_weights=False),
 ]
+  model.fit(
+      train_dataset,
+      epochs=num_epochs,
+      validation_data=valid_dataset,
+      callbacks=callbacks
+  )
   ```
 <p align="justify"> После несколько часов модель успешно обучена, получен файл <b>model.h5</b>.</p>
 
