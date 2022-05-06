@@ -93,14 +93,16 @@ def ASPP(inputs):
 
 ```ruby
  def deeplabv3_plus(shape):  
-  """ Input """
+  """ Вход """
   inputs = Input(shape)  
 
-  """ Encoder """
+  """ Энкодер """
   encoder = ResNet50(weights="imagenet", include_top=False, input_tensor=inputs)  
 
   image_features = encoder.get_layer("conv4_block6_out").output  
-  x_a = ASPP(image_features)  
+  x_a = ASPP(image_features)
+  
+  """ Декодер """
   x_a = UpSampling2D((4, 4), interpolation="bilinear")(x_a)  
 
   x_b = encoder.get_layer("conv2_block2_out").output  
