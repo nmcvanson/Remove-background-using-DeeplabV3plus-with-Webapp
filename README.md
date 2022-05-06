@@ -170,7 +170,7 @@ def ASPP(inputs):
       callbacks=callbacks
   )
   ```
-<p align="justify"> После несколько часов модель успешно обучена, получен файл <b>model.h5</b>.</p>
+
   ## Предсказание нового изображения
   
   <p align="center">
