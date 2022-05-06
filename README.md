@@ -23,7 +23,7 @@
 <p align="center">
   <img width="800" height="400" src="https://github.com/lattice-ai/DeepLabV3-Plus/raw/master/assets/deeplabv3_plus_diagram.png" >
 </p>
-<p align="center">Структура сети DeepLav3v+</p>
+<p align="center">Структура сети DeepLabV3+</p>
 <p align="justify">В данной работе построена модель на основе алгоритма DeepLabV3+ со энкодером на базе ResNet50, а также с  дополнительным компонентом, позволяющим повысить точность сегментации и сократить время вывода (блоками Squeeze & Excitation) (<a href = "https://keras.io/examples/vision/deeplabv3_plus/">пример</a>).</p> 
 
 ## Данные
