@@ -203,8 +203,8 @@ def ASPP(inputs):
 
 # Автор
 
-Нгуен Мань Кыонг
-Магистрант ФБИТ, уневерситет ИТМО
-manhcuonmta1997@gmail.com
-nmc.vanson.pt@gmail.com
+Нгуен Мань Кыонг  
+Магистрант ФБИТ, университет ИТМО  
+manhcuonmta1997@gmail.com  
+nmc.vanson.pt@gmail.com  
 +79680426879
